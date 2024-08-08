@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
+import { VentanaModalComponent } from '../ventana-modal/ventana-modal.component';
 
 @Component({
   selector: 'app-interfaz-principal',
@@ -9,5 +11,10 @@ import { RouterLink, RouterOutlet } from '@angular/router';
   styleUrl: './interfaz-principal.component.css'
 })
 export class InterfazPrincipalComponent {
-
+  constructor(private _matDialog: MatDialog) {}
+  abrirModal():void {
+    this._matDialog.open(VentanaModalComponent, {
+      width:'1200px'
+    })
+  }
 }
