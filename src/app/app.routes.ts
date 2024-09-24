@@ -4,5 +4,5 @@ import { LoginComponent } from './login/login.component';
 
 export const routes: Routes = [
     { path: 'interfaz-principal', component: InterfazPrincipalComponent },
-    { path: 'login', component: LoginComponent },
+    { path: '**', component: LoginComponent },
 ];

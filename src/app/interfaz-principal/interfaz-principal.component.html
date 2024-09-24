@@ -1,4 +1,18 @@
-<a class="top" routerLink="/login">
+  <script>
+ const apiUrl = 'http://localhost:3000/users';
+
+fetch(apiUrl)
+  .then(response => response.json())
+  .then(data => {
+    const userList = document.getElementById('users-list');
+    data.forEach(user => {
+      const listItem = document.createElement('li');
+      listItem.textContent = `${user.name} - ${user.email}`;
+      userList.appendChild(listItem);
+    });
+  })
+  .catch(error => console.error('Error:', error));
+  </script><a class="top" routerLink="/login">
     <button class="logout-button">Cerrar <br> Sesión</button>
 </a>
 
@@ -6,7 +20,25 @@
     <h1>Usuarios que Solicitan Ayuda</h1>
 
     <section class="requests">
-    <div class="user-card" (click)="abrirModal()">
+        <h2>Data from JSON Server</h2>
+
+  <ul id="data-list"></ul>
+<li>Id: 1</li>
+  <script>
+
+fetch(apiUrl)
+  .then(response => response.json())
+  .then(data => {
+    const userList = document.getElementById('users-list');
+    data.forEach(user => {
+      const listItem = document.createElement('li');
+      listItem.textContent = `${user.name} - ${user.email}`;
+      userList.appendChild(listItem);
+    });
+  })
+  .catch(error => console.error('Error:', error));
+  </script>
+    <!-- <div class="user-card" (click)="abrirModal()">
         <span>Nombre usuario 1</span>
         <span>TEL: 5512345678</span>
     </div>
@@ -24,7 +56,7 @@
     <div class="user-card" (click)="abrirModal()">
         <span>Nombre usuario 4</span>
         <span>TEL: 5512345678</span>
-    </div>
+    </div> -->
+
     </section>
 </div>
-<router-outlet></router-outlet>
