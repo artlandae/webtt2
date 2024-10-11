@@ -1,18 +1,4 @@
-  <script>
- const apiUrl = 'http://localhost:3000/users';
-
-fetch(apiUrl)
-  .then(response => response.json())
-  .then(data => {
-    const userList = document.getElementById('users-list');
-    data.forEach(user => {
-      const listItem = document.createElement('li');
-      listItem.textContent = `${user.name} - ${user.email}`;
-      userList.appendChild(listItem);
-    });
-  })
-  .catch(error => console.error('Error:', error));
-  </script><a class="top" routerLink="/login">
+<a class="top" routerLink="/login">
     <button class="logout-button">Cerrar <br> Sesión</button>
 </a>
 
@@ -20,43 +6,18 @@ fetch(apiUrl)
     <h1>Usuarios que Solicitan Ayuda</h1>
 
     <section class="requests">
-        <h2>Data from JSON Server</h2>
+      <span  *ngIf="sos">
+  <div *ngFor="let user of users" class="user-card" (click)="abrirModal(user.id)">
+    <span>id  usuario {{ user.id }}</span>
+    <span>TEL: 5512345678</span>
+  </div>
+</span>
 
-  <ul id="data-list"></ul>
-<li>Id: 1</li>
-  <script>
+  <div *ngIf="!sos">
+    <span>No hya usuarios en situación de rescate</span>
+  </div>
+    
 
-fetch(apiUrl)
-  .then(response => response.json())
-  .then(data => {
-    const userList = document.getElementById('users-list');
-    data.forEach(user => {
-      const listItem = document.createElement('li');
-      listItem.textContent = `${user.name} - ${user.email}`;
-      userList.appendChild(listItem);
-    });
-  })
-  .catch(error => console.error('Error:', error));
-  </script>
-    <!-- <div class="user-card" (click)="abrirModal()">
-        <span>Nombre usuario 1</span>
-        <span>TEL: 5512345678</span>
-    </div>
-    
-    <div class="user-card" (click)="abrirModal()">
-        <span>Nombre usuario 2</span>
-        <span>TEL: 5512345678</span>
-    </div>
-    
-    <div class="user-card" (click)="abrirModal()">
-        <span>Nombre usuario 3</span>
-        <span>TEL: 5512345678</span>
-    </div>
-    
-    <div class="user-card" (click)="abrirModal()">
-        <span>Nombre usuario 4</span>
-        <span>TEL: 5512345678</span>
-    </div> -->
 
     </section>
 </div>
