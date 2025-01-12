@@ -1,11 +1,12 @@
 export interface usuario{
+  id: number,
   name: string;
   bloodType: string;
-  gender: string;
+  sex: string;
   allergies: string;
-  diseases: string;
-  phoneNumber: number;
-  emergencyContactNumber: number;
-  longitude: number; // decimal degrees
-  latitude: number; // decimal degrees
+  CriticalIllnes: string;
+  cellPhone: number;
+  auxiliaryCellPhone: number;
+  lenght: number; // decimal degrees
+  latitud: number; // decimal degrees
 }

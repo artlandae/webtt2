@@ -5,7 +5,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { VentanaModalComponent } from '../ventana-modal/ventana-modal.component';
 import { CommonModule } from '@angular/common';
 import { InterfazPrincipalService } from './interfaz-principal.service';
-import { usuario } from './interfaz-principal.model';
+import { UserStatus, usuario } from './interfaz-principal.model';
 
 @Component({
   selector: 'app-interfaz-principal',
@@ -21,15 +21,14 @@ export class InterfazPrincipalComponent {
 
   // users: Observable<usuario[]> | undefined;
   sos!: boolean
-  users!: usuario[];
-  id!: number;
+  users!: UserStatus[];
+  name!: String;
 
   ngOnInit(): void {  
     this.service.getUsuarios().subscribe(
       (data) => {
         this.users = data;
         console.log(data);
-        console.log(this.users[0]);
         // this.users=[];
         if (this.users.length==0){
           this.sos=false;
@@ -45,7 +44,7 @@ export class InterfazPrincipalComponent {
 
   abrirModal(id: number):void {
     this._matDialog.open(VentanaModalComponent, {
-      width:'1200px',
+      // width:'1200px',
       data: id
     });
   }

@@ -8,8 +8,8 @@
     <section class="requests">
       <span  *ngIf="sos">
   <div *ngFor="let user of users" class="user-card" (click)="abrirModal(user.id)">
-    <span>id  usuario {{ user.id }}</span>
-    <span>TEL: 5512345678</span>
+    <span>id  usuario {{ user.name }}</span>
+    <span>TEL: {{user.cellPhone}} </span>
   </div>
 </span>
 

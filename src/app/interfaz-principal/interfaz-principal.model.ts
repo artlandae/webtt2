@@ -4,3 +4,16 @@ export interface usuario{
     title: string,
     body: string
 }
+
+// export interface UserStatus {
+//     name: string,
+//     cell_phone: string,
+//     auxiliary_cell_phone: string;
+// }
+
+export interface UserStatus {
+    id: number,
+    name: string,
+    cellPhone: string,
+    auxiliaryCellPhone: string;
+}
