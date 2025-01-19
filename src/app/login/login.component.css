@@ -17,7 +17,7 @@
       font-size: 1.4rem;
     }
   
-    input[type="email"],
+    input[type="text"],
     input[type="submit"],
     input[type="password"],
     a {
@@ -41,21 +41,20 @@
     input[type="submit"]:hover {
       cursor: pointer;
     }
-
-    
-
-    form {
+  
+    .login {
+      display: grid;
+      gap: 2rem;
+      width: 50vw;
+      padding-top: 5.35rem;
+    }
+  
+    .main {
+      /* width: 60%; */
+      padding-top: 3rem;
       display: flex;
-      flex-direction: column; /* Alinea los campos del formulario en columna */
-      gap: 10px; /* Añade espacio entre los elementos del formulario */
+      justify-content: center;
     }
-  
-    label, input, p {
-      width: 100%; /* Asegura que los elementos del formulario ocupen todo el ancho disponible */
-      margin-bottom: 10px;
-    }
-  
-    
     a {
       font-style: none;
       display: flex;
@@ -63,158 +62,5 @@
       width: 36.5%;
       margin: 0 auto;
     }
-
-    .contenedor-app {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      min-height: 93vh;
-    }
-
-    .app {
-      width: 100%;
-      margin: 0 auto;
-      padding: 3rem 0;
-    }
-
-    .imagen {
-      height: 100vh;
-      width: 55vw;
-      background-image: url(/assets/logopt.svg);
-      background-size: cover;
-      background-position: center center;
-      background-color: #fff;
-      /* background-color: rgba(0, 0, 0, 0.5); */
-      object-fit: contain;
-      object-fit: cover;
-    }
-
-    .contenedor-imagen {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-      height: 100%;
-      position: relative;
-  }
-
-  .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Capa gris con transparencia */
-    z-index: 1; /* Coloca la capa encima de la imagen */
-  }
   
-
-    .nombre-pagina {
-      text-align: center;
-      margin: 5rem 0;
-      font-weight: bold;
-    }
-    .descripcion-pagina {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-
-    .formulario {
-      margin-top: 5rem;
-      width: 60%;
-      margin: 0 auto;
-  }
-
-  /* Estilos Responsivos */
-@media (max-width: 1024px) {
-  .contenedor-app {
-    grid-template-columns: 1fr; /* Una sola columna para pantallas medianas */
-    width: 100vw;
-  }
-
-  .imagen {
-    width: 100%; /* Ocupa todo el ancho disponible */
-    height: 50vh; /* Ajusta la altura para pantallas más pequeñas */
     
-  }
-
-  
-
-  .formulario {
-    width: 60%; /* El formulario será más ancho para pantallas medianas */
-  }
-}
-
-@media (max-width: 768px) {
-  .contenedor-app {
-    grid-template-columns: 5fr; /* Sigue una sola columna para pantallas pequeñas */
-    
-  }
-
-  .imagen {
-    height: 30vh; 
-    
-  }
-
-  
-
-  .formulario {
-    width: 60%; /* El formulario será más ancho para pantallas pequeñas */
-  }
-
-  .nombre-pagina {
-    margin: 1rem 0;
-  }
-}
-
-@media (max-width: 480px) {
-  .contenedor-app {
-    grid-template-columns: 1fr; /* Una columna en pantallas móviles */
-    width: 60vw;
-  }
-
-  .imagen {
-    height: 26vh; /* Imagen más pequeña para pantallas muy pequeñas */
-    /* background-color: rgba(255, 255, 255, 0.4); */
-    border-radius: 50%;
-  }
-  
-  .overlay {
-    border-radius: 50%;
-    background-color: #FFF;
-    z-index: -1;
-  }
-
-  .formulario {
-    width: 95%; /* Casi todo el ancho en pantallas móviles */
-  }
-
-  .nombre-pagina {
-    margin: 1rem 0;
-  }
-}
-
-.mensaje-exito {
-  padding-top: .5rem;
-  padding-bottom: .5rem;
-  margin: 0 auto;
-  margin-bottom: 1.5rem;
-  width: 75vw;
-  text-align: center;
-  background-color: #0eaa06;
-  color: #FFF;
-  height: 3.5rem;
-  font-weight: bold;
-}
-
-.campos-vacios {
-  padding-top: .25rem;
-  padding-bottom: .25rem;
-  margin: 0 auto;
-  margin-bottom: .5rem;
-  width: 80%;
-  text-align: center;
-  background-color: #ce0000;
-  color: #fff;
-  height: 2rem;
-  font-weight: bold;
-}
