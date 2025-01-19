@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { MensajesService } from './mensajes.service';
+import { VentanaModalService } from './ventana-modal.service';
 
-describe('MensajesService', () => {
-  let service: MensajesService;
+describe('VentanaModalService', () => {
+  let service: VentanaModalService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(MensajesService);
+    service = TestBed.inject(VentanaModalService);
   });
 
   it('should be created', () => {
