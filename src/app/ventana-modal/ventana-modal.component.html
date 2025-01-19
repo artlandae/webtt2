@@ -1,30 +1,23 @@
-
 <section class="ventana-modal">
     <div class="contenido-modal">
         <div class="top">
             <h2>Información de la solicitud</h2>
         </div>
-        <button class="modal-close" (click)="close()">&times;</button>
+        <button class="modal-close" (click)="onNoClick()">&times;</button>
         <div class="contenedor-informacion">
             <article class="informacion-ayuda">
-                <p><span>Nombre: </span>{{user.name}}</p>
-                <p><span>Tipo de Sangre: </span>{{user.bloodType}}</p>
-                <p><span>Sexo: </span>{{user.sex}}</p>
-                <p><span>Alergias: </span>{{user.allergies}}</p>
-                <p><span>Enfermedades: </span>{{user.CriticalIllnes}}</p>
-                <p><span>Teléfono: </span>{{user.cellPhone}}</p>
-                <p><span>Teléfono Contacto: </span>{{user.auxiliaryCellPhone}}</p>
-                <p><span>Longitud: </span>{{user.lenght}}</p>
-                <p><span>Latitud: </span>{{user.latitud}}</p>
+                <p><span>Nombre: </span>Nombre usuario 1</p>
+                <p><span>Tipo de Sangre:</span>O+</p>
+                <p><span>Sexo: </span>Masculino</p>
+                <p><span>Alergias: </span>Alergia 1</p>
+                <p><span>Enfermedades: </span>Enfermedad 1</p>
+                <p><span>Teléfono: </span>5512345678</p>
+                <p><span>Teléfono Contacto: </span>5512341234</p>
+                <p><span>Longitud: </span>17°02'47.5"N</p>
+                <p><span>Latitud: </span>96°38'11.4"W</p>
             </article>
             <article class="mapa">
-                <!-- <div>
-                    <google-map  [center]="{lat: latitud, lng: longitud}" [zoom]="15">
-                      <map-marker [position]="{lat: latitud, lng: longitud}" title="Ubicación Seleccionada"></map-marker>
-                    </google-map>
-                  </div> -->
-                  <iframe [src]="sanitizedUrl" frameborder="0"></iframe>
-                <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15050.168642334505!2d-99.1493647897629!3d19.432178146244407!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1fed345b95753%3A0x72bafda6501064df!2s16%20de%20Septiembre%2027%2C%20Centro%20Hist%C3%B3rico%20de%20la%20Cdad.%20de%20M%C3%A9xico%2C%20Centro%2C%20Cuauht%C3%A9moc%2C%2006010%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses-419!2smx!4v1723057417276!5m2!1ses-419!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> -->
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15050.168642334505!2d-99.1493647897629!3d19.432178146244407!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1fed345b95753%3A0x72bafda6501064df!2s16%20de%20Septiembre%2027%2C%20Centro%20Hist%C3%B3rico%20de%20la%20Cdad.%20de%20M%C3%A9xico%2C%20Centro%2C%20Cuauht%C3%A9moc%2C%2006010%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses-419!2smx!4v1723057417276!5m2!1ses-419!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </article>
         </div>
     </div>
