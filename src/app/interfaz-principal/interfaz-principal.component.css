@@ -7,7 +7,7 @@ button {
 }
 
 .contenedor-principal {
-    height: 100%;
+    padding-top: 7rem;
 }
 
 .logout-button {
@@ -25,12 +25,7 @@ button {
 }
 
 .requests {
-    overflow-x:hidden;
-    overflow-y:scroll;
     padding-top: .25rem;
-    max-height: 500px;
-    border: solid red;
-
 }
 
 .user-card {
