@@ -1,30 +1,23 @@
 <a class="top" routerLink="/login">
-    <button class="logout-button">Cerrar <br> Sesión</button>
+  <button class="logout-button">Cerrar <br> Sesión</button>
 </a>
 
 <div class="contenedor-principal">
-    <h1>Registro de Usuarios que Solicitan Ayuda</h1>
+  <h1>Registro de Usuarios que Solicitan Ayuda</h1>
 
-    <section class="requests">
-    <div class="user-card" (click)="abrirModal()">
-        <span>Nombre usuario 1</span>
-        <span>TEL: 5512345678</span>
-    </div>
-    
-    <div class="user-card" (click)="abrirModal()">
-        <span>Nombre usuario 2</span>
-        <span>TEL: 5512345678</span>
-    </div>
-    
-    <div class="user-card" (click)="abrirModal()">
-        <span>Nombre usuario 3</span>
-        <span>TEL: 5512345678</span>
-    </div>
-    
-    <div class="user-card" (click)="abrirModal()">
-        <span>Nombre usuario 4</span>
-        <span>TEL: 5512345678</span>
-    </div>
-    </section>
+  <section class="requests">
+    <span  *ngIf="sos">
+<div *ngFor="let user of users" class="user-card" (click)="abrirModal(user.id)">
+  <span>Nombre: {{ user.name }}</span>
+  <span>TEL: {{user.cellPhone}} </span>
 </div>
-<router-outlet></router-outlet>
+</span>
+
+<div *ngIf="!sos">
+  <span>No hay usuarios en situación de rescate</span>
+</div>
+  
+
+
+  </section>
+</div>
