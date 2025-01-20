@@ -28,8 +28,8 @@ button {
     overflow-x:hidden;
     overflow-y:scroll;
     padding-top: .25rem;
-    max-height: 500px;
-    border: solid red;
+    max-height: 725px;
+    /* border: solid red; */
 
 }
 
