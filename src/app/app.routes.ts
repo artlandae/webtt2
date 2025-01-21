@@ -8,5 +8,5 @@ export const routes: Routes = [
     { path: 'interfaz-principal', component: InterfazPrincipalComponent, canActivate: [AuthGuard] },
     { path: 'recuperar-contrasena/:id', component: RecuperarContrasenaComponent }, // Updated route
     { path: 'login', component: LoginComponent },
-    { path: '', component: LoginComponent },
+    { path: '**', component: LoginComponent },
 ];

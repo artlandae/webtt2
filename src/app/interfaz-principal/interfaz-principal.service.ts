@@ -18,7 +18,7 @@ export class InterfazPrincipalService {
   getUsuarios(): Observable<UserStatus[]> {
     // return this.HTTP.get<usuario[]>('https://jsonplaceholder.typicode.com/posts');
     // return this.HTTP.get<UserStatus[]>('http://localhost:8080/api/users/status');
-    return this.HTTP.get<UserStatus[]>('http://localizasos.alwaysdata.net/api/users/status');
+    return this.HTTP.get<UserStatus[]>('https://localizasos.alwaysdata.net/api/users/status');
   }
 
   clear() {

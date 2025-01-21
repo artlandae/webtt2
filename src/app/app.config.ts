@@ -19,4 +19,4 @@ export const appConfig: ApplicationConfig = {
 };
 
 
-export const API_URL = 'http://localizasos.alwaysdata.net';
+export const API_URL = 'https://localizasos.alwaysdata.net';

@@ -79,7 +79,8 @@
     .imagen {
       height: 100vh;
       width: 55vw;
-      background-image: url(/assets/logopt.svg);
+      background-image: url(https://localizasos.alwaysdata.net/web/assets/logopt.svg
+      );
       background-size: cover;
       background-position: center center;
       background-color: #fff;
