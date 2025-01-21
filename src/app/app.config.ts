@@ -17,3 +17,6 @@ export const appConfig: ApplicationConfig = {
     provideAnimations()
     ]
 };
+
+
+export const API_URL = 'http://localizasos.alwaysdata.net';
