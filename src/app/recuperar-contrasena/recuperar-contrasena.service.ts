@@ -10,9 +10,9 @@ export class RecuperarContrasenaService {
 
   constructor(private http: HttpClient) { }
 
-  actualizarPassword(id: string | null, password: string|null): Observable<any> {
-    const url = `${API_URL}/api/users/updatepass/`;
-    const body = { password }; // Cuerpo de la solicitud
-    return this.http.put(url+id, body); // Realiza la solicitud PUT
+  actualizarPassword(token: string, password: string | null): Observable<any> {
+    const url = `${API_URL}/api/users/updatepass/${token}`; // Include userString in the URL
+    const body = { password }; // Request body
+    return this.http.put(url, body); // Perform the PUT request
   }
 }

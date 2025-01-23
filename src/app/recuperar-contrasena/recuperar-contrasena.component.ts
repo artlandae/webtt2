@@ -19,10 +19,8 @@ export class RecuperarContrasenaComponent implements OnInit {
   passActual = '';
   passNueva = '';
   passNuevar = '';
-  userId: string | null = null;
+  token: string | null = null;
   userPassword: string | null = null;
-  email: string | null = null;
-  name: string | null = null;
 
   get mensajes() {
     return this.mensajesService.mensajes;
@@ -39,8 +37,8 @@ export class RecuperarContrasenaComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
-      this.userId = params.get('id'); // Get the ID from the route
-      console.log(this.userId);
+      this.token = params.get('token'); // Get the token from the route
+      console.log(this.token);
     });
   }
 
@@ -60,15 +58,10 @@ export class RecuperarContrasenaComponent implements OnInit {
   }
 
   cambiarPassword() {
-    this.recuperarcontrasenaservice.actualizarPassword(this.userId, this.passNueva).subscribe({
+    this.recuperarcontrasenaservice.actualizarPassword(this.token!, this.passNueva).subscribe({
       next: (response) => {
         console.log('Contraseña actualizada con éxito:', response);
-        this.name = response.name;
-        if (this.email && this.name) {
-          // this.sendEmail(this.email, this.name);
-        } else {
-          console.error('No se pudo enviar el correo electrónico porque el correo electrónico del usuario es null');
-        }
+        this.agregarMsj(); // Notify user of successful password change
       },
       error: (error) => {
         console.error('Error al actualizar la contraseña:', error);

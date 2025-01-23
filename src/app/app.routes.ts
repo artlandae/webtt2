@@ -6,7 +6,7 @@ import { RecuperarContrasenaComponent } from './recuperar-contrasena/recuperar-c
 
 export const routes: Routes = [
     { path: 'interfaz-principal', component: InterfazPrincipalComponent, canActivate: [AuthGuard] },
-    { path: 'recuperar-contrasena/:id', component: RecuperarContrasenaComponent }, // Updated route
+    { path: 'recuperar-contrasena/:token', component: RecuperarContrasenaComponent }, // Updated route
     { path: 'login', component: LoginComponent },
     { path: '**', component: LoginComponent },
 ];
