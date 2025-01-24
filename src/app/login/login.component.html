@@ -3,21 +3,20 @@
     <div class="overlay"></div>
     <div class="imagen"></div>
   </div>
-    <div class="app">
-      <h1 class="nombre-pagina">Login</h1>
+  <div class="app">
+    <h1 class="nombre-pagina">Login</h1>
     <p class="descripcion-pagina">Inicia Sesión con tus datos</p>
-    <p *ngIf="mensajes.length>1" class="mensaje-exito">{{mensajes}}</p>
-    <p class="campos-vacios" *ngIf="mensajeCorreo == true">Debe insertar un correo válido</p>
-    <p class="campos-vacios" *ngIf="mensajePass == true">Debe insertar una contraseña</p>
-    <p class="campos-vacios" *ngIf="mensajeGeneral == true">Correo o contraseña no válidos</p>
+    <p *ngIf="mensajes.length > 0" class="mensaje-exito">{{ mensajes }}</p>
+    <p class="campos-vacios" *ngIf="mensajeCorreo">Debe insertar un correo válido</p>
+    <p class="campos-vacios" *ngIf="mensajePass">Debe insertar una contraseña</p>
+    <p class="campos-vacios" *ngIf="mensajeGeneral">Correo o contraseña no válidos</p>
     <form action="" class="formulario">
       <label for="correo">Correo</label>
       <input type="email" name="correo" id="correo" placeholder="correo@correo.com" [(ngModel)]="correo" (change)="validarCorreo()">
       <label for="password">Contraseña</label>
       <input type="password" name="password" id="password" placeholder="********" [(ngModel)]="password" (keyup)="validarPass()">
       <a (click)="loguear()">
-        <!-- <input type="submit" value="Continuar"> -->
-          <p>Continuar</p>
+        <p>Continuar</p>
       </a>
     </form>
   </div>
