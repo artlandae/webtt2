@@ -24,7 +24,7 @@ export class InicioSesionService {
 
   role(emailAddress: string, password: string): Observable<number> {
     // const url = `http://localhost:8080/api/users/login-role`;
-    const url = `${API_URL}/api/users/login.role`;
+    const url = `${API_URL}/api/users/login-role`;
     const body = { emailAddress, password };
 
     return this.http.post<number>(url, body); // Realiza la solicitud POST
