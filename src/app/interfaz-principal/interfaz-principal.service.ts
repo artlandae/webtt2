@@ -18,8 +18,8 @@ export class InterfazPrincipalService {
   getUsuariosSSE(): Observable<UserStatus[]> {
     return new Observable((observer) => {
       // Establece la conexión SSE al backend
-      const link = 'http://localhost:8080/api/users/status'
-      // const link = 'https://localizasos.alwaysdata.net/api/users/status'
+      // const link = 'http://localhost:8080/api/users/status'
+      const link = 'https://localizasos.alwaysdata.net/api/users/status'
       const eventSource = new EventSource(link);
 
       // Manejar mensajes recibidos del servidor
