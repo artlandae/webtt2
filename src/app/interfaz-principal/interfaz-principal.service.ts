@@ -15,10 +15,28 @@ export class InterfazPrincipalService {
 
   messages: string[] = [];
 
-  getUsuarios(): Observable<UserStatus[]> {
-    // return this.HTTP.get<usuario[]>('https://jsonplaceholder.typicode.com/posts');
-    // return this.HTTP.get<UserStatus[]>('http://localhost:8080/api/users/status');
-    return this.HTTP.get<UserStatus[]>('https://localizasos.alwaysdata.net/api/users/status');
+  getUsuariosSSE(): Observable<UserStatus[]> {
+    return new Observable((observer) => {
+      // Establece la conexión SSE al backend
+      const link = 'http://localhost:8080/api/users/status'
+      // const link = 'https://localizasos.alwaysdata.net/api/users/status'
+      const eventSource = new EventSource(link);
+
+      // Manejar mensajes recibidos del servidor
+      eventSource.onmessage = (event) => {
+        const data: UserStatus[] = JSON.parse(event.data); // Parsea los datos recibidos
+        observer.next(data); // Emite los datos al suscriptor
+      };
+
+      // Manejar errores en la conexión
+      eventSource.onerror = (error) => {
+        observer.error(error); // Informa del error
+        eventSource.close(); // Cierra la conexión
+      };
+
+      // Define cómo cerrar la conexión cuando el observable se complete
+      return () => eventSource.close();
+    });
   }
 
   clear() {

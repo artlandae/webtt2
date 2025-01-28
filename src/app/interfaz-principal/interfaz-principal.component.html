@@ -5,26 +5,22 @@
 <div class="contenedor-principal">
   <h1>Registro de Usuarios que Solicitan Ayuda</h1>
 
-
   <section class="requests">
-    <span  *ngIf="sos">
-      <div  class="header user-card" >
+    <span *ngIf="sos">
+      <div class="header user-card">
         <span>Nombre</span>
-        <span>Telefono </span>
+        <span>Teléfono</span>
       </div>
       <section class="contenido">
-      <div *ngFor="let user of users" class="user-card" (click)="abrirModal(user.id)">
-        <span>{{ user.name }}</span>
-        <span>{{user.cellPhone}}</span>
-      </div>
-    </section>
+        <div *ngFor="let user of users" class="user-card" (click)="abrirModal(user.id)">
+          <span>{{ user.name }}</span>
+          <span>{{ user.cellPhone }}</span>
+        </div>
+      </section>
     </span>
 
-<div *ngIf="!sos" >
-  <span>No hay usuarios en situación de rescate</span>
-</div>
-  
-
-</section>
-
+    <div *ngIf="!sos">
+      <span>No hay usuarios en situación de rescate</span>
+    </div>
+  </section>
 </div>
